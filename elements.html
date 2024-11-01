@@ -8,69 +8,76 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<title>Experience Timeline</title>
+		<title>Experience Timeline</title>	
+
 		<style>
-			body {
-				font-family: Arial, sans-serif;
-				color: #444;
-				background: #f3f3f3;
-				margin: 0;
-				padding: 0;
+			/* Container to hold timeline and skills side by side */
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 2em;
+				max-width: 1200px;
+				margin: 0 auto;
 			}
 	
-			.timeline {
-				width: 90%;
-				max-width: 800px;
-				margin: 2em auto;
-				padding: 1em;
+			.timeline, .skills {
+				flex: 1 1 48%; /* Half width for each section */
+				display: flex;
+				flex-direction: column;
+			}
+	
+			/* Timeline styling */
+			.timeline:before {
+				content: '';
+				position: absolute;
+				top: 151px;
+				bottom: 0;
+				left: 182px;
+				width: 2px;
+				background: #e5e5e5;
 			}
 	
 			.timeline-item {
 				position: relative;
-				margin: 1.5em 0;
-				padding-left: 40px;
+				margin: 2em 0;
+				padding-left: 60px;
 			}
 	
-			.timeline-item:before {
+			.timeline-item::before {
 				content: '';
 				position: absolute;
-				left: 20px;
-				top: 0;
+				top: 15px;
+				left: 10px;
 				width: 10px;
 				height: 10px;
-				background: #000000;
+				background: #0077cc;
 				border-radius: 50%;
 			}
 	
-			.timeline-item h3 {
-				font-size: 1.3em;
-				color: #000000;
+			/* Skills section styling */
+			.skills-item {
+				margin: 2em 0;
+				padding-left: 20px;
+				border-left: 2px solid #0077cc;
+			}
+	
+			.skills-item h4 {
 				margin: 0;
 			}
 	
-			.timeline-item p {
-				font-size: 1em;
-				color: #666;
-				margin: 0.5em 0 0;
+			.skills-item ul {
+				list-style: none;
+				padding-left: 0;
+				color: #555;
 			}
 	
-			.timeline-item time {
-				font-size: 0.9em;
-				color: #999;
-			}
-	
-			.line {
-				position: absolute;
-				width: 2px;
-				background: #ddd;
-				top: 0;
-				bottom: 0;
-				left: 24px;
-				z-index: -1;
+			.skills-item ul li {
+				margin: 0.5em 0;
 			}
 		</style>
 
-	
+</head>
 	</head>
 	<body class="is-preload">
 
@@ -86,8 +93,8 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="elements.html">Experience</a></li>
-							<li><a href="projects.html">Projects</a></li>
+                            <li class="active"><a href="elements.html">Experience</a></li>
+                            <li><a href="projects.html">Projects</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -99,98 +106,73 @@
 
 				<!-- Main -->
 					<div id="main">
-
-						<!-- Post -->
-						<section class="timeline">
-							<div class="line"></div>
-							
-							<div class="timeline-item">
-								<h3>General Laborer</h3>
-								<div class="company">Liqui-Chill</div>
-								<div class="date">June 2024 - Present</div>
-								<p>Assisted in the building process and installation of custom cooling and air conditioning systems.</p>
-							</div>
-							
-							<div class="timeline-item">
-								<h3>Student Web Developer</h3>
-								<div class="company">Slippery Rock University</div>
-								<div class="date">February 2024 - Present</div>
-								<p>Responsible for making changes to the university’s public website.</p>
-							</div>
+						<div class="wrapper"> <!-- Wrapper from Massively template -->
+							<div class="container">
+								<!-- Timeline Section -->
+								<section class="timeline">
+									<div class="timeline-item">
+										<h3>Liqui-Chill</h3>
+										<span class="date"><b>General Laborer</b> | June 2024 - Present</span>
+										<p>Assisted in the building process and installation of custom cooling and air conditioning systems.</p>
+									</div>
+									<div class="timeline-item">
+										<h3>Slippery Rock University </h3>
+										<span class="date"><b>Web Developer</b> | February 2024 - Present</span>
+										<p>Responsible for making changes to the university’s public website.</p>
+									</div>
+									<div class="timeline-item">
+										<h3>Slippery Rock University</h3>
+										<span class="date"><b>Student</b> | August 2023 - Present</span>
+										<p>Majored in Cybersecurity with a concentration in Secure Software Development.</p>
+									</div>
+									<div class="timeline-item">
+										<h3>Target Corporation</h3>
+										<span class="date"><b>Team Member</b> | November 2020 - Present</span>
+										<p>Stocked shelves, answered phone calls, trained new employees, and cashiered.</p>
+									</div>
+								</section>
 					
-							<div class="timeline-item">
-								<h3>Began College</h3>
-								<div class="company">Slippery Rock University</div>
-								<div class="date">August 2023 - Present</div>
-								<p>Majored in Cybersecurity with a concentration in Secure Software Development.</p>
+								<!-- Skills Section -->
+								<section class="skills">
+									<div class="skills-item">
+										<h4>Skills Gained</h4>
+										<ul>
+											<li>Problem Solving</li>
+											<li>Adaptability</li>
+											<li>Project Management</li>
+										</ul>
+									</div>
+									<div class="skills-item">
+										<h4>Skills Gained</h4>
+										<ul>
+											<li>Web Management Platforms</li>
+											<li>HTML, CSS, XML</li>
+											<li>Optimization</li>
+										</ul>
+									</div>
+									<div class="skills-item">
+										<h4>Skills Gained</h4>
+										<ul>
+											<li>HTML & CSS Fundamentals</li>
+											<li>Digital Marketing Basics</li>
+											<li>Client Communication</li>
+										</ul>
+									</div>
+									<div class="skills-item">
+										<h4>Skills Gained</h4>
+										<ul>
+											<li>Cooperation</li>
+											<li>Customer Relations</li>
+											<li>Leadership</li>
+										</ul>
+									</div>
+								</section>
 							</div>
-
-							<div class="timeline-item">
-								<h3>General Merchandise Expert</h3>
-								<div class="company">Target Corporation</div>
-								<div class="date">November 2020 - Present</div>
-								<p>Stocked shelves, unloaded trucks, answered phone calls, trained new employees, and cashiered.</p>
-							</div>
-
-						</section>
-
-						
+						</div>
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+				
 
 			</div>
 
