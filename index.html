@@ -9,15 +9,16 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
+				
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>Hello, My Name Is<br /> </h1>
-						<h1>Liam McElligott</h1>
-						<h2 id="animated-text"></h2> 
+						<h1>Hello, My Name Is</h1>
+						<h1 id="name">L<span class="highlight clickable">I</span>am McEll<span class="highlight clickable">I</span>gott</h1>
+						<div id="hover-message">Don't do it</div>
+						<h2 id="animated-text"><span id="typing"></span></h2>
 						
 					</div>
 
@@ -30,6 +31,8 @@
 							<li class="active"><a href="index.html">Home</a></li>
 							<li><a href="elements.html">Experience</a></li>
 							<li><a href="projects.html">Projects</a></li>
+							<li><a href="contact.html">Contact</a></li>
+
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -48,36 +51,36 @@
 									<h2>About Me</h2>
 									<p>Current student at Slippery Rock University majoring in Cybersecurity with a concentration in 
 									Secure Software Development and pursuing a Certificate in Middle Eastern Studies. Passionate when it comes to
-									programming, learning, and problem solving. So far I have experience with: HTML, CSS, JavaScript, Java, C++, 
-									Linux Systems, Risk Assessment, Cryptography, and learning more day by day.</p>
+									programming, learning, and problem solving. So far I have experience with: <span style="color: #0397e7;">HTML, CSS, JavaScript, Java, C++, 
+									Linux Systems, Risk Assessment, Cryptography, </span> and learning more day by day.</p>
 								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="Image of Liam McElligott" /></a>
+								
 								
 							</article>
 
 						<!-- Posts -->
-							<section class="posts">
-								<article>
+							<section class="projects-container separate-row">
+								<article class="project-card half-width">
 									<header>
 										<h2><a href="#">Portfolio </a></h2>
 									</header>
 									<p>This portfolio website was built using a combination of HTML5, JavaScript, and CSS. This website is hosted on Vercel.</p>
 									<ul class="actions special">
-										<li><a href="#" class="button">Go to</a></li>
+										<li><a href="projects.html" class="button">Go to</a></li>
 									</ul>
 								</article>
-								<article>
+								<article class="project-card half-width">
 									<header>
 										<h2><a href="#">National Cyber League</a></h2>
 									</header>
 									<p>Cybersecurity competetion dealing with topics such as Open Source Intelligence, Cryptography, Forensics, and more.</p>
 									<ul class="actions special">
-										<li><a href="#" class="button">Go To</a></li>
+										<li><a href="projects.html" class="button">Go To</a></li>
 									</ul>
 								</article>
 							</section>
 							<ul class="actions special">
-								<li><a href="#" class="button">More Projects</a></li>
+								<li><a href="projects.html" class="button">More Projects</a></li>
 							</ul>
 					</div>
 
@@ -94,6 +97,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/particles.js"></script>
+			<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
+			<script>
+				particlesJS.load('particles-js', 'assets/js/particles.json', function() {
+					console.log('Particles loaded');
+				});
+			</script>
 	</body>
 </html>

@@ -6,6 +6,28 @@
 
 (function($) {
 
+	const nameSpans = document.querySelectorAll('#name span');
+
+	nameSpans.forEach((span) => {
+    if (span.textContent === 'I') {
+        // Hover effect
+        span.addEventListener('mouseenter', () => {
+            span.style.color = 'red';
+            span.title = "Don't do it";
+        });
+        
+        span.addEventListener('mouseleave', () => {
+            span.style.color = ''; // Reset color
+            span.title = '';
+        });
+        
+        // Click alert
+        span.addEventListener('click', () => {
+            alert("AHH DONT POKE ME IN MY I'S");
+        });
+    }
+});
+
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
