@@ -255,4 +255,46 @@
 
 		}
 
+		//text animation
+		const phrases = [
+			"Software Developer",
+			"Cybersecurity Enthusiast",
+			"Techie"
+		];
+		
+		let currentPhraseIndex = 0;
+		let currentCharIndex = 0;
+		let typing = true;
+		
+		function type() {
+			const animatedText = document.getElementById("animated-text");
+			const currentPhrase = phrases[currentPhraseIndex];
+		
+			if (typing) {
+				// Typing effect
+				if (currentCharIndex < currentPhrase.length) {
+					animatedText.textContent += currentPhrase.charAt(currentCharIndex);
+					currentCharIndex++;
+					setTimeout(type, 100); // Adjust typing speed
+				} else {
+					typing = false;
+					setTimeout(type, 2000); // Wait before deleting
+				}
+			} else {
+				// Deleting effect
+				if (currentCharIndex > 0) {
+					animatedText.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+					currentCharIndex--;
+					setTimeout(type, 50); // Adjust deleting speed
+				} else {
+					typing = true;
+					currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Loop through phrases
+					setTimeout(type, 500); // Wait before typing next phrase
+				}
+			}
+		}
+		
+		// Start typing
+		type();
+
 })(jQuery);
